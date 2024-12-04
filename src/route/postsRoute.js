@@ -1,7 +1,12 @@
 import express from 'express';
 import multer from 'multer';
-import { listarPosts, postarNovoPost, uploadImagem } from '../controllers/postsController.js';
+import { atualizarNovoPost, listarPosts, postarNovoPost, uploadImagem } from '../controllers/postsController.js';
+import cors from 'cors';
 
+const corsOptions = {
+     origin: 'http://localhost:8000',
+     optionsSucessStatus: 200,
+};
 // Configura o armazenamento para arquivos carregados
 const storage = multer.diskStorage({
      destination: function (req, file, cb) {
@@ -22,6 +27,7 @@ const upload = multer({ dest: './uploads', storage });
 const routes = (app) => {
      // Habilita o parsing de dados JSON no corpo das requisições
      app.use(express.json());
+     app.use(cors(corsOptions));
 
      // Rota GET para listar todos os posts (implementação em postsController.js)
      app.get('/posts', listarPosts);
@@ -34,6 +40,8 @@ const routes = (app) => {
      //   com o nome de campo 'imagem' no formulário
      // - uploadImagem: função manipuladora do upload (implementação em postsController.js)
      app.post('/upload', upload.single('imagem'), uploadImagem);
+
+     app.put('/upload/:id', atualizarNovoPost);
 };
 
 export default routes;
