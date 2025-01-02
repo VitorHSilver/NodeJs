@@ -159,12 +159,3 @@ GEMINI_API_KEY=sua-chave-api-gemini
 -    Parâmetros:
      -    `id`: ID do post a ser atualizado.
 
-## Licença
-
-Este projeto está licenciado sob a licença MIT.
-
-```
-
-Certifique-se de ajustar os detalhes específicos, como o URL do repositório e outras informações relevantes.
-Certifique-se de ajustar os detalhes específicos, como o URL do repositório e outras informações relevantes.
-```
