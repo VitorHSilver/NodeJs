@@ -2,7 +2,7 @@
 
 Este projeto é uma API construída com Express.js que permite fazer operações de GET e POST em um banco de dados MongoDB Atlas. Além disso, utiliza o serviço Gemini para gerar descrições de imagens.
 
-![Resultado da API](./src/assests/result.png)
+![Resultado da API](./src/assets/result.png)
 
 ## Funcionalidades
 
